@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import Zitronencakes from "../assets/Zitronencakes.jpg";
+import bread from "../assets/bread.png";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-[#fff9f4] p-6 rounded-lg text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#ffe8d6] flex items-center justify-center">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Tradition" className="w-8 h-8" />
+                  <img src={bread} alt="Tradition" className="w-8 h-8" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Traditionelles Handwerk</h3>
                 <p className="text-gray-600 text-sm">Seit 1986 backen wir mit bewährten Rezepten und traditionellen Methoden.</p>
