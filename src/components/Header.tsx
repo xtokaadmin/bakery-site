@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import logoImg from "@/assets/logo.jpg";
 
-
 interface HeaderProps {
   logo?: string;
   cartItemCount?: number;
@@ -19,10 +18,15 @@ interface HeaderProps {
 
 const Header = ({ logo = '/logo.jpg' }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);  // State to manage Products dropdown visibility
   const { cartItems } = useCart(); // Get cart items from context
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleProductsDropdown = () => {
+    setIsProductsOpen(!isProductsOpen);
   };
 
   const productCategories = [
@@ -30,11 +34,9 @@ const Header = ({ logo = '/logo.jpg' }: HeaderProps) => {
     { name: "Desserts", path: "/products/cakes" },
     { name: "Saisonale Produkte", path: "/products/seasonal" },
     { name: "Gluten Free", path: "/products/glutenfree" },
-    
-
   ];
 
-  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0); 
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <header className="fixed top-0 left-0 w-full h-20 bg-white shadow-sm z-50">
@@ -42,8 +44,7 @@ const Header = ({ logo = '/logo.jpg' }: HeaderProps) => {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img src={logoImg} alt="Bäckerei Logo" className="h-12" />
-          <span className="ml-2 text-xl font-semibold text-gray-800">
-          </span>
+          <span className="ml-2 text-xl font-semibold text-gray-800"></span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -144,21 +145,28 @@ const Header = ({ logo = '/logo.jpg' }: HeaderProps) => {
               Über uns
             </Link>
 
-            {/* Mobile Products Dropdown */}  
-            <div className="space-y-2">
-              <p className="text-gray-700 font-medium">Produkte</p>
-              <div className="pl-4 space-y-2">
-                {productCategories.map((category) => (
-                  <Link
-                    key={category.name}
-                    to={category.path}
-                    className="block text-gray-600 hover:text-amber-600 transition-colors"
-                    onClick={toggleMenu}
-                  >
-                    {category.name}
-                  </Link>
-                ))}
-              </div>
+            {/* Mobile Products Dropdown */}
+            <div>
+              <button
+                onClick={toggleProductsDropdown}
+                className="text-gray-700 font-medium flex items-center justify-between w-full"
+              >
+                Produkte <ChevronDown className={`ml-1 h-4 w-4 ${isProductsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isProductsOpen && (
+                <div className="pl-4 space-y-2">
+                  {productCategories.map((category) => (
+                    <Link
+                      key={category.name}
+                      to={category.path}
+                      className="block text-gray-600 hover:text-amber-600 transition-colors"
+                      onClick={toggleMenu}
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <Link

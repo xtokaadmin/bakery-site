@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
-import { products } from "@/data/products"; // Adjust the import path as necessary
+import { products } from "@/data/products";
 
 interface Product {
   id: number;
@@ -21,22 +21,33 @@ interface Product {
 interface ProductsSectionProps {
   filterCategory?: string;
   showTabs?: boolean;
+  limit?: number;
 }
 
 const ProductsSection: React.FC<ProductsSectionProps> = ({
   filterCategory = "all",
   showTabs = true,
+  limit,
 }) => {
-  const [activeCategory, setActiveCategory] = useState(() => filterCategory);
+  const [activeCategory, setActiveCategory] = useState(filterCategory);
   const [addedToCart, setAddedToCart] = useState<number | null>(null);
-
   const { addToCart } = useCart();
 
-  const filteredProducts = showTabs
-    ? activeCategory === "all"
-      ? products
-      : products.filter((product) => product.category === activeCategory)
-    : products.filter((product) => product.category === filterCategory);
+  const getFilteredProducts = () => {
+    let filtered = products;
+
+    if (activeCategory !== "all") {
+      filtered = filtered.filter((product) => product.category === activeCategory);
+    }
+
+    if (limit) {
+      filtered = filtered.slice(0, limit);
+    }
+
+    return filtered;
+  };
+
+  const filteredProducts = getFilteredProducts();
 
   const handleAddToCart = (product: Product) => {
     const cartItem = {
@@ -49,6 +60,8 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
 
     addToCart(cartItem);
     setAddedToCart(product.id);
+
+    setTimeout(() => setAddedToCart(null), 2000); // clear message after 2 seconds
   };
 
   return (
@@ -64,24 +77,27 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
         </div>
 
         {showTabs && (
-          <Tabs defaultValue={filterCategory} className="mb-8">
+          <Tabs defaultValue={filterCategory} value={activeCategory} className="mb-8">
             <div className="flex justify-center">
               <TabsList className="bg-grey">
-                <TabsTrigger value="all" onClick={() => setActiveCategory("all")} className="px-6">
-                  Alle
-                </TabsTrigger>
-                <TabsTrigger value="pastry" onClick={() => setActiveCategory("pastry")} className="px-6">
-                  Gebäck
-                </TabsTrigger>
-                <TabsTrigger value="dessert" onClick={() => setActiveCategory("dessert")} className="px-6">
-                  Desserts
-                </TabsTrigger>
-                <TabsTrigger value="gluten-free" onClick={() => setActiveCategory("gluten-free")} className="px-6">
-                  Gluten-Free
-                </TabsTrigger>
-                <TabsTrigger value="seasonal" onClick={() => setActiveCategory("seasonal")} className="px-6">
-                  Seasonale
-                </TabsTrigger>
+                {["all", "pastry", "dessert", "gluten-free", "seasonal"].map((cat) => (
+                  <TabsTrigger
+                    key={cat}
+                    value={cat}
+                    className="px-6"
+                    onClick={() => setActiveCategory(cat)}
+                  >
+                    {cat === "all"
+                      ? "Alle"
+                      : cat === "pastry"
+                      ? "Gebäck"
+                      : cat === "dessert"
+                      ? "Desserts"
+                      : cat === "gluten-free"
+                      ? "Gluten-Free"
+                      : "Seasonale"}
+                  </TabsTrigger>
+                ))}
               </TabsList>
             </div>
           </Tabs>
@@ -158,7 +174,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
                   <div className="flex justify-between items-center mt-1">
                     <p className="text-neutral-600">CH{product.price.toFixed(2)}</p>
                     <Button
-                      className="py-1 px-3 bg-[#e40062] hover:bg-[#ff529b] "
+                      className="py-1 px-3 bg-[#e40062] hover:bg-[#ff529b]"
                       onClick={(e) => {
                         e.preventDefault();
                         handleAddToCart(product);

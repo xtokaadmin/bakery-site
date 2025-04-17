@@ -49,7 +49,7 @@ export default function Home() {
           </div>
         </section>
 
-        <ProductsSection />
+        <ProductsSection filterCategory="all" showTabs={true} limit={3} />
       </main>
       <Footer />
     </div>

@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import Navbar from "../components/Header";
 import ProductsSection from "./ProductsSection";
@@ -11,9 +9,10 @@ const SesionalePage = () => {
       <Navbar />
       <div>
         <h1 className="text-3xl font-bold text-center my-8">Seasonale</h1>
+        {/* Pass limitProducts={false} to show all products */}
         <ProductsSection filterCategory="seasonal" showTabs={false} />
       </div>
-        <Footer />
+      <Footer />
     </>
   );
 };
