@@ -28,4 +28,4 @@ const SeasonalPage = () => {
   );
 };
 
-export default SeasonalPage;
+export default SeasonalPage; 

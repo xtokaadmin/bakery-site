@@ -183,13 +183,6 @@ const Header = ({ logo = '/logo.jpg' }: HeaderProps) => {
             >
               Kontakt
             </Link>
-            <Link
-              to="/blog"
-              className="text-gray-700 hover:text-amber-600 transition-colors"
-              onClick={toggleMenu}
-            >
-              Blog
-            </Link>
 
             {/* Mobile Cart Link */}
             <Link

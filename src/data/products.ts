@@ -1,4 +1,3 @@
-
 import birnbrot from "../assets/Birnbrot.jpg";
 import cantuccini from "../assets/cantuccini.jpg";
 import gemischte from "../assets/gemischte.jpg";
