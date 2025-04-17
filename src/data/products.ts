@@ -1,8 +1,8 @@
-import brote from "../assets/brote-1.jpg"; 
+
 import birnbrot from "../assets/Birnbrot.jpg";
 import cantuccini from "../assets/cantuccini.jpg";
 import gemischte from "../assets/gemischte.jpg";
-import hausleckeri from "../assets/hausleckeri.jpg";
+import hausleckeri from "../assets/Hausleckeri.jpg";
 import japonais from "../assets/japonais-konfekt.jpg";
 import mandaretti from "../assets/Mandaretti.jpg";
 import mandolinos from "../assets/Mandolinos.jpg";
