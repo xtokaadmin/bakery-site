@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
@@ -11,9 +12,9 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-  title = "Freshly Baked Goods, Made with Love",
-  subtitle = "Artisanal breads and pastries crafted with traditional techniques and the finest ingredients",
-  ctaText = "Shop Now",
+  title = "Frisch gebackene Köstlichkeiten, mit Liebe gemacht",
+  subtitle = "Handwerklich hergestellte Brote und Gebäckstücke, gefertigt mit traditionellen Techniken und den besten Zutaten",
+  ctaText = "Jetzt einkaufen",
   backgroundImage = "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&q=80",
   onCtaClick = () => (window.location.href = "/shop"),
 }: HeroSectionProps) => {
@@ -42,7 +43,7 @@ const HeroSection = ({
           <Button
             onClick={onCtaClick}
             size="lg"
-            className="bg-amber-600 px-8 py-6 text-lg hover:bg-amber-700"
+            className="bg-[#e40062] px-8 py-6 text-lg hover:bg-[#f58f8f]"
           >
             {ctaText}
           </Button>

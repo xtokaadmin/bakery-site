@@ -8,35 +8,41 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/context/CartContext";
+import logoImg from "@/assets/logo.jpg";
+
 
 interface HeaderProps {
   logo?: string;
   cartItemCount?: number;
 }
 
-const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
+const Header = ({ logo = '/logo.jpg' }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cartItems } = useCart(); // Get cart items from context
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const productCategories = [
-    { name: "Breads", path: "/products/breads" },
-    { name: "Pastries", path: "/products/pastries" },
-    { name: "Cakes", path: "/products/cakes" },
-    { name: "Cookies", path: "/products/cookies" },
-    { name: "Seasonal", path: "/products/seasonal" },
+    { name: "Gebäck", path: "/products/pastries" },
+    { name: "Desserts", path: "/products/cakes" },
+    { name: "Saisonale Produkte", path: "/products/seasonal" },
+    { name: "Gluten Free", path: "/products/glutenfree" },
+    
+
   ];
+
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0); 
 
   return (
     <header className="fixed top-0 left-0 w-full h-20 bg-white shadow-sm z-50">
       <div className="container mx-auto h-full px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Bakery Logo" className="h-12" />
+          <img src={logoImg} alt="Bäckerei Logo" className="h-12" />
           <span className="ml-2 text-xl font-semibold text-gray-800">
-            Artisan Bakery
           </span>
         </Link>
 
@@ -46,20 +52,20 @@ const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
             to="/"
             className="text-gray-700 hover:text-amber-600 transition-colors"
           >
-            Home
+            Startseite
           </Link>
           <Link
             to="/about"
             className="text-gray-700 hover:text-amber-600 transition-colors"
           >
-            About
+            Über uns
           </Link>
 
           {/* Products Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center text-gray-700 hover:text-amber-600 transition-colors">
-                Products <ChevronDown className="ml-1 h-4 w-4" />
+                Produkte <ChevronDown className="ml-1 h-4 w-4" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="center" className="w-48">
@@ -83,13 +89,13 @@ const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
             to="/contact"
             className="text-gray-700 hover:text-amber-600 transition-colors"
           >
-            Contact
+            Kontakt
           </Link>
           <Link
-            to="/blog"
+            to="/locations"
             className="text-gray-700 hover:text-amber-600 transition-colors"
           >
-            Blog
+            Locations
           </Link>
         </nav>
 
@@ -98,7 +104,7 @@ const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
           <Link to="/cart" className="relative p-2">
             <ShoppingCart className="h-6 w-6 text-gray-700" />
             {cartItemCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-amber-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-[#e40062] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {cartItemCount}
               </span>
             )}
@@ -109,7 +115,7 @@ const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
         <button
           className="md:hidden text-gray-700 focus:outline-none"
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label="Menü umschalten"
         >
           {isMenuOpen ? (
             <X className="h-6 w-6" />
@@ -128,19 +134,19 @@ const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
               className="text-gray-700 hover:text-amber-600 transition-colors"
               onClick={toggleMenu}
             >
-              Home
+              Startseite
             </Link>
             <Link
               to="/about"
               className="text-gray-700 hover:text-amber-600 transition-colors"
               onClick={toggleMenu}
             >
-              About
+              Über uns
             </Link>
 
-            {/* Mobile Products Dropdown */}
+            {/* Mobile Products Dropdown */}  
             <div className="space-y-2">
-              <p className="text-gray-700 font-medium">Products</p>
+              <p className="text-gray-700 font-medium">Produkte</p>
               <div className="pl-4 space-y-2">
                 {productCategories.map((category) => (
                   <Link
@@ -167,7 +173,7 @@ const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
               className="text-gray-700 hover:text-amber-600 transition-colors"
               onClick={toggleMenu}
             >
-              Contact
+              Kontakt
             </Link>
             <Link
               to="/blog"
@@ -184,7 +190,7 @@ const Header = ({ logo = "/logo.svg", cartItemCount = 0 }: HeaderProps) => {
               onClick={toggleMenu}
             >
               <ShoppingCart className="h-5 w-5 mr-2" />
-              Cart {cartItemCount > 0 && `(${cartItemCount})`}
+              Warenkorb {cartItemCount > 0 && `(${cartItemCount})`}
             </Link>
           </div>
         </div>

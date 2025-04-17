@@ -15,13 +15,13 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Contact Us
+              Kontaktieren Sie uns
             </h1>
-            <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-[#e40062] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We'd love to hear from you! Whether you have a question about our
-              products, want to place a special order, or just want to say
-              hello, we're here to help.
+              Wir würden gerne von Ihnen hören! Ob Sie eine Frage zu unseren
+              Produkten haben, eine Sonderbestellung aufgeben möchten oder
+              einfach nur Hallo sagen möchten, wir sind hier, um zu helfen.
             </p>
           </div>
 
@@ -29,7 +29,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="bg-stone-50 p-8 rounded-lg shadow-sm">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                Send Us a Message
+                Senden Sie uns eine Nachricht
               </h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -42,8 +42,8 @@ const Contact = () => {
                     </label>
                     <Input
                       id="name"
-                      placeholder="Your name"
-                      className="bg-white border-amber-200 focus:border-amber-500"
+                      placeholder="Ihr Name"
+                      className="bg-white border-[#ff529b]  focus:border-amber-500"
                     />
                   </div>
                   <div className="space-y-2">
@@ -51,13 +51,13 @@ const Contact = () => {
                       htmlFor="email"
                       className="text-sm font-medium text-gray-700"
                     >
-                      Email
+                      E-Mail
                     </label>
                     <Input
                       id="email"
                       type="email"
-                      placeholder="Your email"
-                      className="bg-white border-amber-200 focus:border-amber-500"
+                      placeholder="Ihre E-Mail"
+                      className="bg-white border-[#ff529b] focus:border-amber-500"
                     />
                   </div>
                 </div>
@@ -66,12 +66,12 @@ const Contact = () => {
                     htmlFor="subject"
                     className="text-sm font-medium text-gray-700"
                   >
-                    Subject
+                    Betreff
                   </label>
                   <Input
                     id="subject"
-                    placeholder="Subject"
-                    className="bg-white border-amber-200 focus:border-amber-500"
+                    placeholder="Betreff"
+                    className="bg-white border-[#ff529b]  focus:border-amber-500"
                   />
                 </div>
                 <div className="space-y-2">
@@ -79,17 +79,17 @@ const Contact = () => {
                     htmlFor="message"
                     className="text-sm font-medium text-gray-700"
                   >
-                    Message
+                    Nachricht
                   </label>
                   <Textarea
                     id="message"
-                    placeholder="Your message"
+                    placeholder="Ihre Nachricht"
                     rows={5}
-                    className="bg-white border-amber-200 focus:border-amber-500"
+                    className="bg-white border-[#ff529b]  focus:border-amber-500"
                   />
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
-                  Send Message
+                <Button className="w-full bg-[#e40062] hover:bg-[#ff529b] text-white">
+                  Nachricht senden
                 </Button>
               </form>
             </div>
@@ -98,33 +98,33 @@ const Contact = () => {
             <div className="space-y-8">
               <div className="bg-stone-50 p-8 rounded-lg shadow-sm">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Our Information
+                  Unsere Informationen
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <MapPin className="h-6 w-6 text-amber-600 mt-1" />
+                    <MapPin className="h-6 w-6 text-[#e40062] mt-1" />
                     <div>
-                      <h3 className="font-medium text-gray-900">Address</h3>
+                      <h3 className="font-medium text-gray-900">Adresse</h3>
                       <p className="text-gray-600 mt-1">
-                        123 Bakery Street
+                      Bernstrasse 61
                         <br />
-                        Flour City, FC 12345
+                        4852 Rothrist
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <Phone className="h-6 w-6 text-amber-600 mt-1" />
+                    <Phone className="h-6 w-6 text-[#e40062] mt-1" />
                     <div>
-                      <h3 className="font-medium text-gray-900">Phone</h3>
-                      <p className="text-gray-600 mt-1">(123) 456-7890</p>
+                      <h3 className="font-medium text-gray-900">Telefon</h3>
+                      <p className="text-gray-600 mt-1">+41 62 794 10 39</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <Mail className="h-6 w-6 text-amber-600 mt-1" />
+                    <Mail className="h-6 w-6 text-[#e40062] mt-1" />
                     <div>
-                      <h3 className="font-medium text-gray-900">Email</h3>
+                      <h3 className="font-medium text-gray-900">E-Mail</h3>
                       <p className="text-gray-600 mt-1">
-                        hello@artisanbakery.com
+                      info@baeckerei-waelchli.ch
                       </p>
                     </div>
                   </div>
@@ -133,20 +133,20 @@ const Contact = () => {
 
               <div className="bg-stone-50 p-8 rounded-lg shadow-sm">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Hours of Operation
+                  Öffnungszeiten
                 </h2>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="font-medium">Monday - Friday:</span>
-                    <span>7:00 AM - 7:00 PM</span>
+                    <span className="font-medium">Montag - Freitag:</span>
+                    <span>6:00 Uhr - 18:30 Uhr</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-medium">Saturday:</span>
-                    <span>8:00 AM - 5:00 PM</span>
+                    <span className="font-medium">Samstag:</span>
+                    <span>6:00 Uhr - 16:00 Uhr</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-medium">Sunday:</span>
-                    <span>8:00 AM - 3:00 PM</span>
+                    <span className="font-medium">Sonntag:</span>
+                    <span>8:00 Uhr - 12:00 Uhr</span>
                   </div>
                 </div>
               </div>
@@ -165,7 +165,7 @@ const Contact = () => {
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Bakery Location"
+                  title="Bäckerei Standort"
                   className="rounded-lg"
                 ></iframe>
               </div>

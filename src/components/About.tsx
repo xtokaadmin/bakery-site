@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -11,23 +12,22 @@ const About = () => {
         {/* Add padding to account for fixed header */}
         <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Story</h1>
-            <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4"> Unsere Geschichte</h1>
+            <div className="w-24 h-1 bg-[#e40062] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover the passion and tradition behind our artisanal bakery
+            Im langjährigen Einsatz für unsere Region
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Our Humble Beginnings
+              Unsere bescheidenen Anfänge
               </h2>
               <p className="text-gray-600 mb-4">
-                Founded in 2005, Artisan Bakery began as a small family
-                operation with a simple mission: to create authentic,
-                handcrafted bread using traditional methods and the finest
-                ingredients.
+              Im Jahr 1986 übernahmen Elsbeth und René Fleischli die Dorfbäckerei Maag in Niederglatt und gründeten die Bäckerei-Conditorei Fleischli AG. Mit viel Hingabe und Leidenschaft 
+              sowie einem qualitätsorientierten Konzept haben die beiden während 30 Jahren ein gesundes und dynamisches Unternehmen erschaffen.
+               Seit 2021 sind  Chantal und Konrad Pfister die neuen Inhaber des Unternehmens, welches sie bereits seit 2017, damals noch als Mehrheitsaktionäre, führen. Sie treiben die Weiterentwicklung gemeinsam mit rund 300 Mitarbeitenden in 15 Filialen im Zürcher Unterland und in Zürich voran.
               </p>
               <p className="text-gray-600">
                 What started as a passion project in a tiny kitchen has grown
@@ -56,72 +56,24 @@ const About = () => {
             </div>
             <div className="order-1 md:order-2">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Our Philosophy
+              Unsere Philosophie
               </h2>
               <p className="text-gray-600 mb-4">
-                We believe that great baking is a perfect balance of science and
-                art. Our bakers combine precise techniques with creative flair
-                to produce baked goods that not only taste exceptional but also
-                tell a story.
+                Wir glauben, dass großartiges Backen die perfekte Balance zwischen Wissenschaft und Kunst ist. Unsere Bäcker verbinden präzise Techniken mit kreativem Gespür, 
+                um Backwaren zu schaffen, die nicht nur außergewöhnlich schmecken, sondern auch eine Geschichte erzählen.
               </p>
               <p className="text-gray-600">
-                We're committed to sourcing locally whenever possible,
-                supporting our community's farmers and producers while ensuring
-                the freshest ingredients for our customers. Sustainability isn't
-                just a buzzword for us—it's a core value that guides our
-                decisions.
+              Wir setzen uns dafür ein, wann immer möglich lokal einzukaufen – um die Landwirte und Produzenten unserer Region zu unterstützen und gleichzeitig unseren Kunden die frischesten Zutaten zu bieten. Nachhaltigkeit ist für uns kein Modewort – sie ist ein zentraler Wert, der unsere Entscheidungen leitet.
+
+
               </p>
             </div>
           </div>
 
-          <div className="bg-amber-50 rounded-lg p-8 mb-16">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-              Meet Our Team
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
-                  <img
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=baker1"
-                    alt="Head Baker"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-medium text-gray-900">
-                  Emma Thompson
-                </h3>
-                <p className="text-amber-700">Head Baker</p>
-              </div>
-              <div className="text-center">
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
-                  <img
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=baker2"
-                    alt="Pastry Chef"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-medium text-gray-900">
-                  Michael Chen
-                </h3>
-                <p className="text-amber-700">Pastry Chef</p>
-              </div>
-              <div className="text-center">
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
-                  <img
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=baker3"
-                    alt="Store Manager"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-medium text-gray-900">
-                  Sarah Johnson
-                </h3>
-                <p className="text-amber-700">Store Manager</p>
-              </div>
-            </div>
-          </div>
+   
         </div>
       </div>
+      <div className="border-t border-gray-300 mx-4 md:mx-8 lg:mx-20 my-8"></div>
       <Footer />
     </div>
   );
