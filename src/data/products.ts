@@ -1,5 +1,5 @@
 import brote from "../assets/brote-1.jpg"; 
-import birnbrot from "../assets/birnbrot.jpg";
+import birnbrot from "../assets/Birnbrot.jpg";
 import cantuccini from "../assets/cantuccini.jpg";
 import gemischte from "../assets/gemischte.jpg";
 import hausleckeri from "../assets/hausleckeri.jpg";
@@ -8,7 +8,7 @@ import mandaretti from "../assets/Mandaretti.jpg";
 import mandolinos from "../assets/Mandolinos.jpg";
 import nussknackerli from "../assets/Nussknackerli.jpg";
 import sable from "../assets/Sable.jpg";
-import schuemli from "../assets/schuemli.jpg";
+import schuemli from "../assets/Schuemli.jpg";
 import zitronen from "../assets/Zitronencakes.jpg";
 import vierreckig from "../assets/Vierreckigjpg.jpg";
 import geburtstag from "../assets/Geburtstag.jpg";
@@ -17,14 +17,14 @@ import round2 from "../assets/round2.jpg";
 import multi1 from "../assets/multi1.jpg";
 import multi2 from "../assets/mulit2.jpg";  
 import whiterolls from "../assets/whiterolls.jpg";
-import parasiete from "../assets/parisette.jpg";
+import parisette from "../assets/parisette.jpg";
 import pumkinseed from "../assets/pumkinseed.jpg";
 import sunflower from "../assets/sunflower.jpg";
 import student from "../assets/student.jpg";
 import apple from "../assets/apple.jpg";
-import konfektplatee from "../assets/konfektplatte.jpg";
+import konfektplatte from "../assets/konfektplatte.jpg";
 import chraebeli from "../assets/chraebeli.jpg";
-import zimtsteren from "../assets/zimtsterne.jpg";
+import zimtsteren from "../assets/Zimtsterne.jpg";
 import brunsli from "../assets/brunsli.jpg";
 import mailderlijpg from "../assets/Mailaenderlijpg.jpg";
  
@@ -164,7 +164,7 @@ import mailderlijpg from "../assets/Mailaenderlijpg.jpg";
         id: 19,
         name: "Parisette White",
         price: 6.99,
-        image: parasiete,
+        image: parisette,
         category: "gluten-free",
     },
     {
@@ -227,7 +227,7 @@ import mailderlijpg from "../assets/Mailaenderlijpg.jpg";
         id: 28,
         name: "Gemischte Konfektplatte",
         price: 6.99,
-        image: konfektplatee,
+        image: konfektplatte,
         category: "seasonal",
     },
 
